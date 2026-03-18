@@ -1,17 +1,19 @@
-import type { Category } from '../types';
-import gymImg from '../assets/challenges/gym.png';
-import foodImg from '../assets/challenges/food.png';
-import detoxImg from '../assets/challenges/detox.png';
+import type { Category, User, Message } from '../types';
+import sportBg from '../assets/categories/sport.jpg';
+import foodBg from '../assets/categories/ernährung.jpg';
+import verzichtBg from '../assets/categories/verzicht.jpg';
+import digitalDetoxBg from '../assets/challenges/digital-detox.png';
+import walkingImg from '../assets/challenges/walking.jpg';
 
 export const categories: Category[] = [
   {
     id: '1',
     slug: 'sport',
     name: 'Sport & Fitness',
-    description: 'Bewege deinen Körper, stärke deinen Geist.',
-    imageUrl: gymImg,
-    count: 12,
-    newCount: 3,
+    description: 'Bewege deinen Körper, stäre deinen Geist.',
+    imageUrl: sportBg,
+    count: 13,
+    newCount: 4,
     totalParticipants: '12.4k',
     challenges: [
       {
@@ -21,8 +23,41 @@ export const categories: Category[] = [
         duration: '7 Tage',
         difficulty: 'Anfänger',
         jokers: 1,
-        startDate: 'Jeden Montag',
+        startDate: 'Morgen',
         participants: 245
+      },
+      {
+        id: 's4',
+        title: 'Daily Walk: Lite',
+        subtitle: 'Bewege dich täglich: 6.000 Schritte für eine Woche.',
+        duration: '7 Tage',
+        difficulty: 'Anfänger',
+        jokers: 2,
+        startDate: 'Übermorgen',
+        participants: 512,
+        imageUrl: walkingImg
+      },
+      {
+        id: 's5',
+        title: 'Daily Walk: Pro',
+        subtitle: 'Steigere dein Ziel: 10.000 Schritte für eine Woche.',
+        duration: '7 Tage',
+        difficulty: 'Mittel',
+        jokers: 1,
+        startDate: 'Übermorgen',
+        participants: 342,
+        imageUrl: walkingImg
+      },
+      {
+        id: 's6',
+        title: 'Daily Walk: Elite',
+        subtitle: 'Die ultimative Distanz: 15.000 Schritte für eine Woche.',
+        duration: '7 Tage',
+        difficulty: 'Profi',
+        jokers: 0,
+        startDate: 'Übermorgen',
+        participants: 128,
+        imageUrl: walkingImg
       },
       {
         id: 's2',
@@ -31,7 +66,7 @@ export const categories: Category[] = [
         duration: '14 Tage',
         difficulty: 'Mittel',
         jokers: 2,
-        startDate: 'Demnächst',
+        startDate: 'In 3 Tagen',
         participants: 120
       },
       {
@@ -41,7 +76,7 @@ export const categories: Category[] = [
         duration: '21 Tage',
         difficulty: 'Profi',
         jokers: 3,
-        startDate: 'In 2 Wochen',
+        startDate: '23. März',
         participants: 85
       }
     ]
@@ -51,7 +86,7 @@ export const categories: Category[] = [
     slug: 'ernaehrung',
     name: 'Ernährung',
     description: 'Du bist, was du isst. Tanke Energie.',
-    imageUrl: foodImg,
+    imageUrl: foodBg,
     count: 8,
     newCount: 1,
     totalParticipants: '8.2k',
@@ -63,7 +98,7 @@ export const categories: Category[] = [
         duration: '7 Tage',
         difficulty: 'Anfänger',
         jokers: 1,
-        startDate: 'Nächste Woche',
+        startDate: 'In 5 Tagen',
         participants: 512
       },
       {
@@ -73,20 +108,20 @@ export const categories: Category[] = [
         duration: '14 Tage',
         difficulty: 'Mittel',
         jokers: 2,
-        startDate: '01. April',
+        startDate: '30. März',
         participants: 320
       }
     ]
   },
   {
     id: '3',
-    slug: 'verzicht',
-    name: 'Detox & Verzicht',
-    description: 'Digitale Freiheit und physische Unabhängigkeit.',
-    imageUrl: detoxImg,
-    count: 15,
-    newCount: 5,
-    totalParticipants: '24.1k',
+    slug: 'digital-detox',
+    name: 'Digital Detox',
+    description: 'Fokus auf das Wesentliche. Offline ist der neue Luxus.',
+    imageUrl: digitalDetoxBg,
+    count: 6,
+    newCount: 2,
+    totalParticipants: '10.5k',
     challenges: [
       {
         id: 'v1',
@@ -95,9 +130,21 @@ export const categories: Category[] = [
         duration: '14 Tage',
         difficulty: 'Mittel',
         jokers: 2,
-        startDate: 'Jederzeit',
+        startDate: 'Morgen',
         participants: 890
-      },
+      }
+    ]
+  },
+  {
+    id: '4',
+    slug: 'verzicht',
+    name: 'Verzicht',
+    description: 'Überwinde deine Laster für mehr Freiheit.',
+    imageUrl: verzichtBg,
+    count: 9,
+    newCount: 3,
+    totalParticipants: '13.6k',
+    challenges: [
       {
         id: 'v2',
         title: 'Smoke Free Mission',
@@ -105,7 +152,7 @@ export const categories: Category[] = [
         duration: '21 Tage',
         difficulty: 'Profi',
         jokers: 1,
-        startDate: 'Morgen',
+        startDate: 'In 2 Tagen',
         participants: 145
       },
        {
@@ -115,9 +162,63 @@ export const categories: Category[] = [
         duration: '30 Tage',
         difficulty: 'Profi',
         jokers: 2,
-        startDate: 'Am 1. des Monats',
+        startDate: '1. April',
         participants: 334
       }
     ]
+  }
+];
+
+export const mockUsers: User[] = [
+  {
+    id: 'u1',
+    name: 'Nikolas',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Nikolas',
+    bio: 'Challenge enthusiast & developer.',
+    location: 'Berlin, DE',
+    badges: ['Early Bird', 'Consistency King']
+  },
+  {
+    id: 'u2',
+    name: 'Sarah',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
+    bio: 'Let\'s crush those goals together!',
+    location: 'Hamburg, DE',
+    badges: ['Fitness Freak']
+  },
+  {
+    id: 'u3',
+    name: 'Marc',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Marc',
+    bio: 'Consistency is key.',
+    location: 'München, DE',
+    badges: ['Discipline Pro']
+  }
+];
+
+export const mockMessages: Message[] = [
+  {
+    id: 'm1',
+    userId: 'u2',
+    userName: 'Sarah',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
+    text: 'Hey Leute! Wer ist heute auch schon um 6 Uhr gestartet? ☀️',
+    timestamp: '06:15'
+  },
+  {
+    id: 'm2',
+    userId: 'u3',
+    userName: 'Marc',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Marc',
+    text: 'Hier! ✋ Die ersten 2km sind geschafft.',
+    timestamp: '06:42'
+  },
+  {
+    id: 'm3',
+    userId: 'u2',
+    userName: 'Sarah',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
+    text: 'Stark Marc! Dranbleiben! 🔥',
+    timestamp: '06:45'
   }
 ];

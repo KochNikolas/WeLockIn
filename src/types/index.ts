@@ -7,6 +7,7 @@ export interface Challenge {
   jokers: number;
   startDate: string;
   participants: number;
+  imageUrl?: string;
 }
 
 export interface Category {
@@ -19,4 +20,23 @@ export interface Category {
   newCount: number;
   totalParticipants: string;
   challenges: Challenge[];
+}
+
+export interface User {
+  id: string;
+  name: string;
+  avatar: string;
+  bio?: string;
+  location?: string;
+  badges?: string[];
+}
+
+export interface Message {
+  id: string;
+  userId: string;
+  userName: string;
+  avatar: string;
+  text: string;
+  timestamp: string;
+  isMe?: boolean;
 }
